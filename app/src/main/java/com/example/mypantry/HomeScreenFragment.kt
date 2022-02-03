@@ -20,15 +20,9 @@ class HomeScreenFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         homeScreenBinding =
             FragmentHomeScreenBinding.inflate(inflater, container, false)
-
-//        setupRecyclerView()
 
         return homeScreenBinding.root
     }
@@ -39,20 +33,4 @@ class HomeScreenFragment : Fragment() {
             startActivity(Intent(requireContext(),AddIngredientActivity::class.java))
         }
     }
-
-//    override fun onResume() {
-//        super.onResume()
-//        (homeScreenBinding.rvIngredients.adapter as IngredientsAdapter)
-//            .refreshData(ingredientsRepository.getIngredients())
-//    }
-//
-//    private fun setupRecyclerView() {
-//        homeScreenBinding.rvIngredients.layoutManager = LinearLayoutManager (
-//            context, LinearLayoutManager.VERTICAL, false)
-//
-//        homeScreenBinding.rvIngredients.adapter =
-//            IngredientsAdapter(ingredientsRepository.getIngredients())
-//
-//    }
-
 }

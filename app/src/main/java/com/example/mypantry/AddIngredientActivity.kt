@@ -2,6 +2,7 @@ package com.example.mypantry
 
 import android.os.Bundle
 import android.view.Menu
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -45,4 +46,5 @@ class AddIngredientActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.options_menu, menu)
         return true
     }
+
 }
