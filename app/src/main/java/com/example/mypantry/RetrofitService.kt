@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface RetrofitService {
 
-    @GET("food/ingredients/search?query=banana&apiKey=d5e5abb43ff04413b72c202719110909")
+    @GET("food/ingredients/search?query=a&apiKey=d5e5abb43ff04413b72c202719110909")
     suspend fun getAllIngredients(): IngredientsResponse
 
     companion object {
