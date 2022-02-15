@@ -1,7 +1,8 @@
-package com.example.mypantry
+package com.example.mypantry.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.mypantry.data.Repository
 
 class MyViewModelFactory constructor(private val repository: Repository)
     : ViewModelProvider.Factory {

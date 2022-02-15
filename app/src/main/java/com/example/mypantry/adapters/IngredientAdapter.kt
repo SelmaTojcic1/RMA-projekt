@@ -1,16 +1,17 @@
-package com.example.mypantry
+package com.example.mypantry.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Filter
-import android.widget.Filter.FilterResults
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
-import java.util.*
+import com.example.mypantry.IngredientClickListener
+import com.example.mypantry.R
+import com.example.mypantry.model.Ingredient
 import kotlin.collections.ArrayList
 
 
-class IngredientAdapter : RecyclerView.Adapter<IngredientViewHolder>(), Filterable  {
+class IngredientAdapter() : RecyclerView.Adapter<IngredientViewHolder>(), Filterable  {
 
     private val ingredients = ArrayList<Ingredient>()
     private var filteredIngredients = ArrayList<Ingredient>()
@@ -30,15 +31,14 @@ class IngredientAdapter : RecyclerView.Adapter<IngredientViewHolder>(), Filterab
 
     override fun onBindViewHolder(holder: IngredientViewHolder, position: Int) {
         val ingredient = filteredIngredients[position]
-//        val ingredient = ingredients[position]
         holder.bind(ingredient)
         holder.itemView.setOnClickListener{
             ingredientClickListener?.onItemClick(ingredient)
+            //add to database, show on home screen fragment
         }
     }
 
     override fun getItemCount(): Int = filteredIngredients.size
-//    override fun getItemCount(): Int = ingredients.size
 
 
     override fun getFilter(): Filter {

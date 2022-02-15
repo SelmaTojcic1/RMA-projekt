@@ -1,4 +1,4 @@
-package com.example.mypantry
+package com.example.mypantry.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater

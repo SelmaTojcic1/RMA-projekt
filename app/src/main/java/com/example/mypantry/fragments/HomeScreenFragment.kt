@@ -1,4 +1,4 @@
-package com.example.mypantry
+package com.example.mypantry.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.mypantry.activities.AddIngredientActivity
 import com.example.mypantry.databinding.FragmentHomeScreenBinding
 
 
@@ -30,7 +31,7 @@ class HomeScreenFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         homeScreenBinding.btnOpenAddIngredientFragment.setOnClickListener{
-            startActivity(Intent(requireContext(),AddIngredientActivity::class.java))
+            startActivity(Intent(requireContext(), AddIngredientActivity::class.java))
         }
     }
 }

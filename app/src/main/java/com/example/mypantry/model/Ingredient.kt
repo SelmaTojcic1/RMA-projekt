@@ -1,4 +1,4 @@
-package com.example.mypantry
+package com.example.mypantry.model
 
 data class Ingredient (
     val id: Int,

@@ -1,7 +1,8 @@
-package com.example.mypantry
+package com.example.mypantry.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.mypantry.adapters.ViewPagerAdapter
 import com.example.mypantry.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayoutMediator
 

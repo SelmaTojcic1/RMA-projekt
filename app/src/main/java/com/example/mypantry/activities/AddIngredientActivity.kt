@@ -1,8 +1,7 @@
-package com.example.mypantry
+package com.example.mypantry.activities
 
 import android.app.SearchManager
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.widget.SearchView
@@ -10,7 +9,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.mypantry.*
+import com.example.mypantry.adapters.IngredientAdapter
+import com.example.mypantry.data.Repository
 import com.example.mypantry.databinding.ActivityAddIngredientBinding
+import com.example.mypantry.networking.RetrofitService
+import com.example.mypantry.viewmodels.IngredientViewModel
+import com.example.mypantry.viewmodels.MyViewModelFactory
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -34,7 +39,8 @@ class AddIngredientActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         viewModel = ViewModelProvider(this,
-            MyViewModelFactory(Repository(retrofitService))).get(IngredientViewModel::class.java)
+            MyViewModelFactory(Repository(retrofitService))
+        ).get(IngredientViewModel::class.java)
 
         binding.rvIngredients.adapter = adapter
 
