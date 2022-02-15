@@ -11,7 +11,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mypantry.*
 import com.example.mypantry.adapters.IngredientAdapter
-import com.example.mypantry.data.Repository
+import com.example.mypantry.data.repository.Repository
+import com.example.mypantry.data.room.DatabaseBuilder
 import com.example.mypantry.databinding.ActivityAddIngredientBinding
 import com.example.mypantry.networking.RetrofitService
 import com.example.mypantry.viewmodels.IngredientViewModel
@@ -27,6 +28,9 @@ class AddIngredientActivity : AppCompatActivity() {
     private val retrofitService = RetrofitService.getInstance()
     private val adapter = IngredientAdapter()
 
+    private val ingredientDao = DatabaseBuilder.getInstance().dao()
+    private val repository = Repository(retrofitService, ingredientDao)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -39,7 +43,7 @@ class AddIngredientActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         viewModel = ViewModelProvider(this,
-            MyViewModelFactory(Repository(retrofitService))
+            MyViewModelFactory(Repository(retrofitService, ingredientDao))
         ).get(IngredientViewModel::class.java)
 
         binding.rvIngredients.adapter = adapter

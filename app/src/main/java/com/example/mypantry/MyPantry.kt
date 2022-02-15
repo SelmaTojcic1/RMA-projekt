@@ -6,12 +6,13 @@ import android.content.Context
 class MyPantry : Application() {
 
     companion object {
-        lateinit var application: MyPantry
+        lateinit var context: MyPantry
+            private set
     }
 
     override fun onCreate() {
         super.onCreate()
-        application = this@MyPantry
+        context = this
         //koin
     }
 }

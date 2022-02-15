@@ -4,7 +4,7 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.mypantry.databinding.ItemIngredientBinding
-import com.example.mypantry.model.Ingredient
+import com.example.mypantry.data.model.Ingredient
 
 class IngredientViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 

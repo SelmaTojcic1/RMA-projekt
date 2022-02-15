@@ -7,7 +7,10 @@ import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mypantry.IngredientClickListener
 import com.example.mypantry.R
-import com.example.mypantry.model.Ingredient
+import com.example.mypantry.data.model.Ingredient
+import com.example.mypantry.data.repository.Repository
+import com.example.mypantry.data.room.DatabaseBuilder
+import com.example.mypantry.networking.RetrofitService.Companion.retrofitService
 import kotlin.collections.ArrayList
 
 
@@ -33,8 +36,7 @@ class IngredientAdapter() : RecyclerView.Adapter<IngredientViewHolder>(), Filter
         val ingredient = filteredIngredients[position]
         holder.bind(ingredient)
         holder.itemView.setOnClickListener{
-            ingredientClickListener?.onItemClick(ingredient)
-            //add to database, show on home screen fragment
+            ingredientClickListener?.onIngredientClick(ingredient)
         }
     }
 

@@ -1,7 +1,7 @@
 package com.example.mypantry
 
-import com.example.mypantry.model.Ingredient
+import com.example.mypantry.data.model.Ingredient
 
 interface IngredientClickListener {
-    fun onItemClick(ingredient: Ingredient)
+    fun onIngredientClick(ingredient: Ingredient)
 }
