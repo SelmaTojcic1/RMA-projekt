@@ -27,9 +27,7 @@ class AddIngredientActivity : AppCompatActivity() {
     lateinit var viewModel: IngredientViewModel
     private val retrofitService = RetrofitService.getInstance()
     private val adapter = IngredientAdapter()
-
     private val ingredientDao = DatabaseBuilder.getInstance().dao()
-    private val repository = Repository(retrofitService, ingredientDao)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -86,5 +84,4 @@ class AddIngredientActivity : AppCompatActivity() {
 
         return true
     }
-
 }

@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity() {
         bindingMain = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingMain.root)
 
-
         val viewPager = bindingMain.viewPager
         val tabLayout = bindingMain.tabLayout
 

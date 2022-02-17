@@ -8,7 +8,7 @@
     android:background="@drawable/lighter_background">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_ingredients"
+        android:id="@+id/rv_ingredients_home"
         android:layout_width="370dp"
         android:layout_height="0dp"
         android:layout_marginTop="14dp"

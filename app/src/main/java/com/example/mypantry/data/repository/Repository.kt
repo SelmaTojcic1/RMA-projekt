@@ -1,5 +1,6 @@
 package com.example.mypantry.data.repository
 
+import androidx.lifecycle.MutableLiveData
 import com.example.mypantry.data.model.Ingredient
 import com.example.mypantry.data.room.IngredientDao
 import com.example.mypantry.networking.IngredientsResponse
@@ -13,7 +14,15 @@ class Repository constructor(private val retrofitService: RetrofitService,
         return retrofitService.getAllIngredients()
     }
 
+    fun getAllFridgeIngredients() : List<Ingredient> {
+        return ingredientDao.getIngredients()
+    }
+
     fun insertIngredient(ingredient: Ingredient) {
         ingredientDao.insertIngredient(ingredient)
+    }
+
+    fun deleteIngredient(ingredient: Ingredient) {
+        ingredientDao.deleteIngredient(ingredient)
     }
 }

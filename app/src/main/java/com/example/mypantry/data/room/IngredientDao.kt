@@ -7,7 +7,7 @@ import com.example.mypantry.data.model.Ingredient
 interface IngredientDao {
 
     @Query("SELECT * FROM ingredient")
-    fun getIngredient(): Ingredient
+    fun getIngredients(): List<Ingredient>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertIngredient(ingredient: Ingredient)
