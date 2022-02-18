@@ -2,6 +2,7 @@ package com.example.mypantry.adapters
 
 import android.app.AlertDialog
 import android.content.DialogInterface
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -45,7 +46,7 @@ class FridgeAdapter : RecyclerView.Adapter<IngredientViewHolder>() {
                         DialogInterface.OnClickListener { _, _ ->
                             repository.deleteIngredient(ingredient)
                             fridgeIngredients.removeAt(position)
-                            notifyItemRemoved(position)
+                            notifyDataSetChanged()
                         })
                     setNegativeButton("Cancel",
                         DialogInterface.OnClickListener { _, _ ->

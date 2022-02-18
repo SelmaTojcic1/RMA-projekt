@@ -72,7 +72,7 @@ class AddIngredientActivity : AppCompatActivity() {
 
         searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                adapter.filter.filter(query)
+//                adapter.filter.filter(query)
                 return false
             }
 
@@ -81,7 +81,6 @@ class AddIngredientActivity : AppCompatActivity() {
                 return true
             }
         })
-
         return true
     }
 }

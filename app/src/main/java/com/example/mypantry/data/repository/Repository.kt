@@ -1,6 +1,5 @@
 package com.example.mypantry.data.repository
 
-import androidx.lifecycle.MutableLiveData
 import com.example.mypantry.data.model.Ingredient
 import com.example.mypantry.data.room.IngredientDao
 import com.example.mypantry.networking.IngredientsResponse
