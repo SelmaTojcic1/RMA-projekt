@@ -18,5 +18,4 @@ class IngredientViewModel constructor(private val repository: Repository) : View
     fun getFridgeIngredients() {
         fridgeIngredientList.postValue(repository.getAllFridgeIngredients())
     }
-
 }

@@ -10,13 +10,14 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mypantry.activities.AddIngredientActivity
 import com.example.mypantry.adapters.FridgeAdapter
-import com.example.mypantry.adapters.IngredientAdapter
 import com.example.mypantry.data.repository.Repository
 import com.example.mypantry.data.room.DatabaseBuilder
 import com.example.mypantry.databinding.FragmentHomeScreenBinding
 import com.example.mypantry.networking.RetrofitService
 import com.example.mypantry.viewmodels.IngredientViewModel
 import com.example.mypantry.viewmodels.MyViewModelFactory
+import android.app.Activity
+import androidx.fragment.app.FragmentTransaction
 
 
 class HomeScreenFragment : Fragment() {
@@ -24,12 +25,11 @@ class HomeScreenFragment : Fragment() {
     private lateinit var homeScreenBinding: FragmentHomeScreenBinding
     lateinit var viewModel: IngredientViewModel
     private val fridgeAdapter = FridgeAdapter()
-
     private val retrofitService = RetrofitService.getInstance()
     private val ingredientDao = DatabaseBuilder.getInstance().dao()
 
     companion object {
-        const val TAG = "Ingredients list"
+        const val TAG = "Ingredients_list"
         fun create(): HomeScreenFragment {
             return HomeScreenFragment()
         }
@@ -49,7 +49,6 @@ class HomeScreenFragment : Fragment() {
         homeScreenBinding.btnOpenAddIngredientFragment.setOnClickListener{
             startActivity(Intent(requireContext(), AddIngredientActivity::class.java))
         }
-
     }
 
     private fun initViews() {
@@ -64,7 +63,7 @@ class HomeScreenFragment : Fragment() {
 
         viewModel.fridgeIngredientList.observe(requireActivity(), {
             fridgeAdapter.setFridgeIngredientList()
-        });
+        })
 
         viewModel.getFridgeIngredients()
     }

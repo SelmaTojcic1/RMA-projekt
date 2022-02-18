@@ -22,8 +22,9 @@ class FridgeAdapter : RecyclerView.Adapter<IngredientViewHolder>() {
     private val ingredientClickListener: IngredientClickListener? = null
 
     fun setFridgeIngredientList() {
+        this.fridgeIngredients.clear()
         this.fridgeIngredients.addAll(repository.getAllFridgeIngredients())
-        notifyDataSetChanged()
+        this.notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IngredientViewHolder {
