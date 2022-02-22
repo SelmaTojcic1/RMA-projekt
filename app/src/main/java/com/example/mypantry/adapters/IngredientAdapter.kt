@@ -1,13 +1,11 @@
 package com.example.mypantry.adapters
 
 import android.app.AlertDialog
-import android.content.Context
 import android.content.DialogInterface
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mypantry.IngredientClickListener
 import com.example.mypantry.R
@@ -39,18 +37,18 @@ class IngredientAdapter() : RecyclerView.Adapter<IngredientViewHolder>(), Filter
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IngredientViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_ingredient, parent, false)
+            .inflate(R.layout.item, parent, false)
 
         return IngredientViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: IngredientViewHolder, position: Int) {
+    override fun onBindViewHolder(holderIngredient: IngredientViewHolder, position: Int) {
         val ingredient = filteredIngredients[position]
-        holder.bind(ingredient)
-        holder.itemView.setOnClickListener{
+        holderIngredient.bind(ingredient)
+        holderIngredient.itemView.setOnClickListener{
             ingredientClickListener?.onIngredientClick(ingredient)
             let {
-                val builder = AlertDialog.Builder(holder.itemView.context)
+                val builder = AlertDialog.Builder(holderIngredient.itemView.context)
                 builder.apply {
                     setMessage("Add this ingredient to Fridge?")
                     setPositiveButton("Yes",

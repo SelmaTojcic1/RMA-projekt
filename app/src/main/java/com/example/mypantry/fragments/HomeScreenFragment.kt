@@ -28,13 +28,6 @@ class HomeScreenFragment : Fragment() {
     private val retrofitService = RetrofitService.getInstance()
     private val ingredientDao = DatabaseBuilder.getInstance().dao()
 
-    companion object {
-        const val TAG = "Ingredients_list"
-        fun create(): HomeScreenFragment {
-            return HomeScreenFragment()
-        }
-    }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         homeScreenBinding =
             FragmentHomeScreenBinding.inflate(inflater, container, false)

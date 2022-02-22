@@ -1,6 +1,7 @@
 package com.example.mypantry.data.repository
 
 import com.example.mypantry.data.model.Ingredient
+import com.example.mypantry.data.model.Recipe
 import com.example.mypantry.data.room.IngredientDao
 import com.example.mypantry.networking.IngredientsResponse
 import com.example.mypantry.networking.RetrofitService
@@ -23,5 +24,9 @@ class Repository constructor(private val retrofitService: RetrofitService,
 
     fun deleteIngredient(ingredient: Ingredient) {
         ingredientDao.deleteIngredient(ingredient)
+    }
+
+    fun getRecipes() : ArrayList<Recipe> {
+        return retrofitService.getRecipes()
     }
 }

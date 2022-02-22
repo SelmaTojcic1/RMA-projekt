@@ -10,7 +10,7 @@
     android:background="@drawable/rv_background">
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/iv_ingredient"
+        android:id="@+id/iv_item"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_margin="12dp"
@@ -22,7 +22,7 @@
         tools:src="@drawable/food" />
 
     <TextView
-        android:id="@+id/tv_ingredient_name"
+        android:id="@+id/tv_item_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
@@ -31,7 +31,7 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         tools:text="Ingredient name"
-        app:layout_constraintStart_toEndOf="@id/iv_ingredient"
+        app:layout_constraintStart_toEndOf="@id/iv_item"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
 
